@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 101-square.py
-# Brennan D Baraban <375@holbertonschool.com>
+# Ayomide B. Majoyegbe
 """Define a class Square."""
 
 
