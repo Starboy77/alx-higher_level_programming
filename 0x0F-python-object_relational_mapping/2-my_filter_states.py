@@ -9,10 +9,10 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
-    c.execute("SELECT * FROM states ORDER BY id ASC")
+    c.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
+              (sys.argv[4],))
     rows = c.fetchall()
     for row in rows:
-        if row[1] == str(sys.argv[4]):
-            print(row)
+        print(row)
     c.close()
     db.close()
